@@ -1,3 +1,10 @@
+#-------------------------------------------------------------------------
+# Name:         Tree
+# Purpose:		Pygame drawing of a tree
+# Author:       Bassias, B
+# Created:      24/04/2024
+#-------------------------------------------------------------------------
+
 import pygame
 
 # Initialize the game engine
@@ -28,8 +35,15 @@ dark_green = (15, 82, 0)
 # ---------------------------
 # Functions
 
-# ---------------------------
+def draw_tree(x:int, y:int):
+    pygame.draw.rect(screen, brown, [x-25, y+180, 50, 100])
 
+    # Pines (top to bottom)
+    pygame.draw.polygon(screen, dark_green, [[x, y], [x-50, y+80], [x+50, y+80]])
+    pygame.draw.polygon(screen, dark_green, [[x, y+40], [x-70, y+140], [x+70, y+140]])
+    pygame.draw.polygon(screen, dark_green, [[x, y+80], [x-90, y+200], [x+90, y+200]])
+
+# ---------------------------
 
 # --------------- Main program loop ---------------
 running = True
@@ -45,14 +59,7 @@ while running:
     # ----- DRAWING -----
     screen.fill(white)  # always the first drawing command
 
-    # Draw a Tree
-    # Trunk
-    pygame.draw.rect(screen, brown, [325, 300, 50, 100])
-
-    # Pines (top to bottom)
-    pygame.draw.polygon(screen, dark_green, [[350, 120], [300, 200], [400, 200]])
-    pygame.draw.polygon(screen, dark_green, [[350, 160], [280, 260], [420, 260]])
-    pygame.draw.polygon(screen, dark_green, [[350, 200], [260, 320], [440, 320]])
+    draw_tree(350,120)
 
     # Must be the last two lines of the game loop
     pygame.display.flip()
