@@ -36,6 +36,16 @@ dark_green = (15, 82, 0)
 # Functions
 
 def draw_tree(x:int, y:int):
+
+    '''
+	This function draws a tree.
+
+	Args:
+		x (int): x-position for the tip of the tree
+		y (int): y-position for the tip of the tree
+	'''
+    
+    # Trunk
     pygame.draw.rect(screen, brown, [x-25, y+180, 50, 100])
 
     # Pines (top to bottom)
